@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CsabaDu.DynamicTestData.Core\CsabaDu.DynamicTestData.Core.csproj" />
+  </ItemGroup>
+
 </Project>
