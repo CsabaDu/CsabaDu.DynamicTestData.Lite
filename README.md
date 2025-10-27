@@ -62,9 +62,9 @@ Lightweight runtime helpers for manual-enumerable-style data sources - depends o
   - **Core strategy contract**:  
   	*IDataStrategy.cs*
   - **Basic data sources**:   
-  	*DynamicDataSource.cs*
+  	*DynamicDataSource.cs*,  
   	*DynamicObjectArraySource.cs*,  
-  	*DynamicExpectedObjectArraySource.cs*,  
+  	*DynamicExpectedObjectArraySource.cs*  
 
 **When to use**:  
 - You implement `IEnumerable<object[]>` or `IEnumerable<T>` data sources and want minimal transitive dependencies while keeping enriched metadata support
