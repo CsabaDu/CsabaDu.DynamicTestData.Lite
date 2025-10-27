@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CsabaDu.DynamicTestData.Core\CsabaDu.DynamicTestData.Core.csproj" />
+    <PackageReference Include="CsabaDu.DynamicTestData.Core" Version="2.1.0-beta" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
-﻿# CsabaDu.DynamicTestData.Lite
+﻿# CsabaDu.DynamicTestData.Core
 
-A light version of **CsabaDu.DynamicTestData**, a robust, flexible, extensible, pure .NET framework to facilitate dynamic data-driven testing.
+Core types of **CsabaDu.DynamicTestData**, a robust, flexible, extensible, pure .NET framework to facilitate dynamic data-driven testing.
 
 ---
 
@@ -19,6 +19,7 @@ Visit the **[Wiki](https://github.com/CsabaDu/CsabaDu.DynamicTestData/wiki)** fo
 
 ## 📘 Table of Contents
 
+- [**CsabaDu.DynamicTestData — Modular Architecture**](#csabadudynamictestdata--modular-architecture))
 - [**Changelog**](#changelog)
 - [**Contributing**](#contributing)
 - [**License**](#license)
@@ -28,7 +29,56 @@ Visit the **[Wiki](https://github.com/CsabaDu/CsabaDu.DynamicTestData/wiki)** fo
 
 ---
 
+## CsabaDu.DynamicTestData — Modular Architecture
+
+### **Overview**  
+
+**CsabaDu.DynamicTestData** has been reorganized from a single monolithic package into a set of focused, aligned modules (NuGet packages) while keeping a clean, consistent namespace hierarchy under `CsabaDu.DynamicTestData.*`. Modules are deployable package boundaries; namespaces are logical organization inside those packages. The new layout reduces transitive dependencies, clarifies responsibilities, and makes it easier for consumers to adopt only what they need.
+
+See the Segregated Architecture Diagram for a visual overview of module boundaries and namespace relationships:
+
+![CsabaDu_DynamicTestData_Segregated_Simplified](https://raw.githubusercontent.com/CsabaDu/CsabaDu.DynamicTestData/refs/heads/master/_Images/CsabaDu_DynamicTestData_Segregated_Simplified.svg)
+
+---
+
+### **Modules and contents**
+
+**Core Foundation Module (package: `CsabaDu.DynamicTestData.Core`)**: see [CsabaDu.DynamicTestData.Core README](https://github.com/CsabaDu/CsabaDu.DynamicTestData.Core/blob/master/README.md)
+
+#### **Lite Implementation Module (package: `CsabaDu.DynamicTestData.Lite`)**  
+
+Lightweight runtime helpers for manual-enumerable-style data sources - depends on Core.
+
+**Namespaces and highlights**:  
+
+- **`CsabaDu.DynamicTestData.DataStrategyTypes.Interfaces`**  
+  - **Encoding enums for data strategy**:  
+    *ArgsCoce.cs*,  
+    *PropsCode.cs*
+  - **Helper methods**:  
+	*Extensions.cs*
+
+- **`CsabaDu.DynamicTestData.DynamicDataSources`**  
+  - **Core strategy contract**:  
+  	*IDataStrategy.cs*
+  - **Basic data sources**:   
+  	*DynamicDataSource.cs*
+  	*DynamicObjectArraySource.cs*,  
+  	*DynamicExpectedObjectArraySource.cs*,  
+
+**When to use**:  
+- You implement `IEnumerable<object[]>` or `IEnumerable<T>` data sources and want minimal transitive dependencies while keeping enriched metadata support
+- You need basic thread-safe data source runtime implementations for common scenarios
+
+**Dependencies**: `CsabaDu.DynamicTestData.Core` (>= 2.1.0-beta)
+
+---
+
 ## Changelog
+
+### **Version 2.1.0-beta** (2025-10-27)
+
+- Initial release of the `CsabaDu.DynamicTestData.Lite` framework, by segregating the light version of the `CsabaDu.DynamicTestData` framework into a dedicated package.
 
 ---
 
