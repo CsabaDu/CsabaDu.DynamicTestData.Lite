@@ -43,7 +43,9 @@ See the Segregated Architecture Diagram for a visual overview of module boundari
 
 ### **Modules and contents**
 
-**Core Foundation Module (package: `CsabaDu.DynamicTestData.Core`)**: see [CsabaDu.DynamicTestData.Core README](https://github.com/CsabaDu/CsabaDu.DynamicTestData.Core/blob/master/README.md)
+**Core Foundation Module (package: `CsabaDu.DynamicTestData.Core`)**:  
+Foundation layer with essential contract surface, DTOs, stateless encoding helpers and strategy definitions.  
+See [CsabaDu.DynamicTestData.Core README](https://github.com/CsabaDu/CsabaDu.DynamicTestData.Core/blob/master/README.md).
 
 #### **Lite Implementation Module (package: `CsabaDu.DynamicTestData.Lite`)**  
 
@@ -52,15 +54,10 @@ Lightweight runtime helpers for manual-enumerable-style data sources - depends o
 **Namespaces and highlights**:  
 
 - **`CsabaDu.DynamicTestData.DataStrategyTypes.Interfaces`**  
-  - **Encoding enums for data strategy**:  
-    *ArgsCoce.cs*,  
-    *PropsCode.cs*
-  - **Helper methods**:  
-	*Extensions.cs*
-
-- **`CsabaDu.DynamicTestData.DynamicDataSources`**  
   - **Core strategy contract**:  
   	*IDataStrategy.cs*
+
+- **`CsabaDu.DynamicTestData.DynamicDataSources`**  
   - **Basic data sources**:   
   	*DynamicDataSource.cs*,  
   	*DynamicObjectArraySource.cs*,  

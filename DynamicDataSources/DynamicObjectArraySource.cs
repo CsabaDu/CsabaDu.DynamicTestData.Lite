@@ -24,7 +24,6 @@ public abstract class DynamicObjectArraySource(ArgsCode argsCode, PropsCode prop
     : DynamicDataSource(argsCode, propsCode)
 {
     #region Methods
-
     private object?[] TestDataToParams(ITestData testData)
     => testData.ToParams(ArgsCode, PropsCode);
 
