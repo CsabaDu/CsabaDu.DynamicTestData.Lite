@@ -33,7 +33,7 @@ Visit the **[Wiki](https://github.com/CsabaDu/CsabaDu.DynamicTestData/wiki)** fo
 
 ### **Overview**  
 
-**CsabaDu.DynamicTestData** has been reorganized from a single monolithic package into a set of focused, aligned modules (NuGet packages) while keeping a clean, consistent namespace hierarchy under `CsabaDu.DynamicTestData.*`. Modules are deployable package boundaries; namespaces are logical organization inside those packages. The new layout reduces transitive dependencies, clarifies responsibilities, and makes it easier for consumers to adopt only what they need.
+**CsabaDu.DynamicTestData** has been reorganized from a single monolithic package into a set of focused, aligned modules (NuGet packages) while keeping a clean, consistent namespace hierarchy under `CsabaDu.DynamicTestData.*`. Modules are deployable package boundaries; namespaces are logical organization inside those packages. The new layout reduces transitive dependencies, clarifies responsibilities, and makes it easier for developers to adopt only what they need.
 
 See the Segregated Architecture Diagram for a visual overview of module and namespace boundaries and dependencies:
 
