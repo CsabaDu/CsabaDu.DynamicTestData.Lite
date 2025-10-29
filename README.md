@@ -53,16 +53,34 @@ Lightweight runtime helpers for manual-enumerable-style data sources - depends o
 
 **Namespaces and highlights**:  
 
-- **`CsabaDu.DynamicTestData.DataStrategyTypes.Interfaces`**  
-  - **Core strategy contract**:  
-  	*IDataStrategy.cs*
+---
+**`CsabaDu.DynamicTestData.DataStrategyTypes.Interfaces`**  
 
-- **`CsabaDu.DynamicTestData.DynamicDataSources`**  
-  - **Basic data sources**:   
-  	*DynamicDataSource.cs*,  
-  	*DynamicObjectArraySource.cs*,  
-  	*DynamicExpectedObjectArraySource.cs*  
+- *Core strategy contract*:  
 
+  - **IDataStrategy.cs**  
+
+    - `IDataStrategy`: interface  
+
+---
+**`CsabaDu.DynamicTestData.DynamicDataSources`**  
+
+- *Basic data sources*:  
+
+  - **DynamicDataSource.cs**  
+
+    - `DynamicDataSource` : abstract class  
+    - `DynamicDataSource<TDataHolder>` : abstract class  
+  
+  - **DynamicObjectArraySource.cs**  
+
+    - `DynamicObjectArraySource` : abstract class  
+
+  - **DynamicExpectedObjectArraySource.cs**  
+
+    - `DynamicExpectedObjectArraySource` : abstract class  
+
+---
 **When to use**:  
 - You implement `IEnumerable<object[]>` or `IEnumerable<T>` data sources and want minimal transitive dependencies while keeping enriched metadata support
 - You need basic thread-safe data source runtime implementations for common scenarios
