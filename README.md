@@ -44,7 +44,7 @@ See the Segregated Architecture Diagram for a visual overview of module and name
 ### **Modules and contents**
 
 - #### Core Foundation Module  
-***(package: `CsabaDu.DynamicTestData.Core`)***  
+  ***(package: `CsabaDu.DynamicTestData.Core`)***  
 
 Foundation layer with essential contract surface, DTOs, stateless encoding helpers and strategy definitions.  
 See [CsabaDu.DynamicTestData.Core README](https://github.com/CsabaDu/CsabaDu.DynamicTestData.Core/blob/master/README.md).
