@@ -37,7 +37,7 @@ Visit the **[Wiki](https://github.com/CsabaDu/CsabaDu.DynamicTestData/wiki)** fo
 
 See the Segregated Architecture Diagram for a visual overview of module and namespace boundaries and dependencies:
 
-![CsabaDu_DynamicTestData_Segregated_Simplified](https://raw.githubusercontent.com/CsabaDu/CsabaDu.DynamicTestData/refs/heads/master/_Images/CsabaDu_DynamicTestData_Segregated_Simplified.svg)
+![CsabaDu_DynamicTestData_Segregated_Simplified_Full](https://raw.githubusercontent.com/CsabaDu/CsabaDu.DynamicTestData/refs/heads/master/_Images/CsabaDu_DynamicTestData_Segregated_Simplified_Full.svg)
 
 ---
 
