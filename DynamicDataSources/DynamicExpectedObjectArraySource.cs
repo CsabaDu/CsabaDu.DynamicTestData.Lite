@@ -1,7 +1,7 @@
 ﻿// SPDX-License-Identifier: MIT
 // Copyright (c) 2025. Csaba Dudas (CsabaDu)
 
-namespace CsabaDu.DynamicTestData.DynamicDataSources;
+namespace CsabaDu.DynamicTestData.Lite.DynamicDataSources;
 
 /// <summary>
 /// Represents a dynamic object array source, specifically configured to exclude testcase name from

@@ -1,7 +1,7 @@
 ﻿// SPDX-License-Identifier: MIT
 // Copyright (c) 2025. Csaba Dudas (CsabaDu)
 
-namespace CsabaDu.DynamicTestData.DataStrategyTypes.Interfaces;
+namespace CsabaDu.DynamicTestData.Lite.DataStrategyTypes.Interfaces;
 
 /// <summary>
 /// Represents a strategy for processing test data, defining how an <see cref="ITestData"/> instance should be turned into test data row.
