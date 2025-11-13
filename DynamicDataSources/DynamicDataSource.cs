@@ -226,4 +226,8 @@ where TDataHolder : class
     /// <param name="testData">The test data to add. This parameter cannot be null.</param>
     protected abstract void Add<TTestData>(TTestData testData)
     where TTestData : notnull, ITestData;
+
+    protected virtual void Add<TTestData>(TTestData testData, string? testMethodName)
+    where TTestData : notnull, ITestData
+    => Add(testData);
 }
