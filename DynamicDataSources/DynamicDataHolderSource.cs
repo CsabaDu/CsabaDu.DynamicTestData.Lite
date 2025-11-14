@@ -40,12 +40,41 @@ where TDataHolder : class
     public virtual void ResetDataHolder()
     => DataHolder = default;
 
+    protected void Add<TTestData>(
+        bool isTypedDataHolder,
+        IEnumerable<INamedTestCase> namedTestCases,
+        TTestData testData,
+        Action<TTestData> add)
+    where TTestData : notnull, ITestData
+    {
+        if (!isTypedDataHolder)
+        {
+            InitDataHolder(testData);
+            return;
+        }
+
+        if (namedTestCases.Any(testData.Equals))
+        {
+            return;
+        }
+
+        add(testData);
+    }
+
     /// <summary>
     /// Adds the specified test data to the collection.
     /// </summary>
     /// <typeparam name="TTestData">The type of the test data to add. Must implement <see cref="ITestData"/> and cannot be null.</typeparam>
     /// <param name="testData">The test data to add. This parameter cannot be null.</param>
     protected abstract void Add<TTestData>(TTestData testData)
+    where TTestData : notnull, ITestData;
+
+    /// <summary>
+    /// Initializes the data holder with the first test data instance.
+    /// </summary>
+    /// <typeparam name="TTestData">Type of test data (must implement ITestData and be non-nullable).</typeparam>
+    /// <param name="testData">The test data used for initialization.</param>
+    protected abstract void InitDataHolder<TTestData>(TTestData testData)
     where TTestData : notnull, ITestData;
 
     #region Add methods
