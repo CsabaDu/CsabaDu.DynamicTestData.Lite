@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Dynamic Test Data Lite</Title>
-    <Version>2.1.2-beta</Version>
+    <Version>2.1.3-beta</Version>
     <Company>CsabaDu</Company>
     <Description>Light version of CsabaDu.DynamicTestData, a robust, flexible, extensible, pure .NET framework to facilitate dynamic data-driven testing.</Description>
     <Copyright>(c) 2025. Csaba Dudas (CsabaDu)</Copyright>
@@ -14,7 +14,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/CsabaDu/CsabaDu.DynamicTestData.Lite</RepositoryUrl>
     <PackageTags>dynamic; unit; test; data; driven; typesafe; threadsafe; extensible; mstest; nunit; xunit; xunit.v3; modular;</PackageTags>
-    <PackageReleaseNotes>Namespaces updated. Added: `DynamicDataSource.Add(TTestData, string? testMethodName)`</PackageReleaseNotes>
+    <PackageReleaseNotes>Namespaces updated. Added: protected Add(...) methods. abstract TestDataToParams(...). TestDataToParms methods shifted to new genderic DynamicDataSource. DynamicDataHolderSource.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
