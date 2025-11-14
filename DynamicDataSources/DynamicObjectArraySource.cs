@@ -24,7 +24,7 @@ public abstract class DynamicObjectArraySource(ArgsCode argsCode, PropsCode prop
 : DynamicDataSource<object?[]>(argsCode, propsCode)
 {
     #region Methods
-    protected override object?[] TestDataToParams<TTestData>(string? testMethodName, TTestData testData)
+    protected override object?[] TestDataToParams<TTestData>( TTestData testData)
     => testData.ToParams(ArgsCode, PropsCode);
 
     //#region TestDataToParams

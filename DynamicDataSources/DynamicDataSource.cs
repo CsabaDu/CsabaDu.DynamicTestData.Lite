@@ -185,12 +185,7 @@ public abstract class DynamicDataSource : IDataStrategy
 public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode propsCode)
 : DynamicDataSource(argsCode, propsCode)
 {
-    protected string? TestMethodName {  get; set; } = null;
-
-    public void ResetTestMethodName()
-    => TestMethodName = null;
-
-    protected abstract TRow TestDataToParams<TTestData>(string? testMethodName, TTestData testData)
+    protected abstract TRow TestDataToParams<TTestData>(TTestData testData)
     where TTestData : notnull, ITestData;
 
     #region TestDataToParms methods
@@ -210,7 +205,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -227,7 +221,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1, T2? arg2)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -242,7 +235,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1, T2? arg2, T3? arg3)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -257,7 +249,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1, T2? arg2, T3? arg3, T4? arg4)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -272,7 +263,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -287,7 +277,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -302,7 +291,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -317,7 +305,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7, T8? arg8)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -332,7 +319,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         string expected,
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7, T8? arg8, T9? arg9)
     => TestDataToParams(
-        TestMethodName,
         CreateTestData(
             definition,
             expected,
@@ -360,7 +346,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -379,7 +364,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -394,7 +378,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -410,7 +393,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -425,7 +407,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -440,7 +421,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? args6)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -455,7 +435,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -470,7 +449,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7, T8? arg8)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -485,7 +463,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7, T8? arg8, T9? arg9)
     where TStruct : struct
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataReturns(
             definition,
             expected,
@@ -512,7 +489,10 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         TException expected,
         T1? arg1)
         where TException : Exception
-        => TestDataToParams(TestMethodName, CreateTestDataThrows(definition, expected, arg1));
+        => TestDataToParams(
+            CreateTestDataThrows(
+                definition,
+                expected, arg1));
 
     /// <summary>
     /// Creates a parameter array for an exception test case with two arguments.
@@ -527,7 +507,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2)
         where TException : Exception
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataThrows(
             definition,
             expected,
@@ -542,7 +521,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3)
     where TException : Exception
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataThrows(
             definition,
             expected,
@@ -557,7 +535,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4)
     where TException : Exception
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataThrows(
             definition,
             expected,
@@ -572,7 +549,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5)
     where TException : Exception
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataThrows(
             definition,
             expected,
@@ -587,7 +563,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6)
     where TException : Exception
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataThrows(
             definition,
             expected,
@@ -602,7 +577,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7)
     where TException : Exception
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataThrows(
             definition,
             expected,
@@ -617,7 +591,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7, T8? arg8)
     where TException : Exception
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataThrows(
             definition,
             expected,
@@ -632,7 +605,6 @@ public abstract class DynamicDataSource<TRow>(ArgsCode argsCode, PropsCode props
         T1? arg1, T2? arg2, T3? arg3, T4? arg4, T5? arg5, T6? arg6, T7? arg7, T8? arg8, T9? arg9)
     where TException : Exception
     => TestDataToParams(
-        TestMethodName,
         CreateTestDataThrows(
             definition,
             expected,
