@@ -14,7 +14,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/CsabaDu/CsabaDu.DynamicTestData.Lite</RepositoryUrl>
     <PackageTags>dynamic; unit; test; data; driven; typesafe; threadsafe; extensible; mstest; nunit; xunit; xunit.v3; modular;</PackageTags>
-    <PackageReleaseNotes>Namespaces updated. Added: protected Add(...) methods. abstract TestDataToParams(...). TestDataToParms methods shifted to new genderic DynamicDataSource. DynamicDataHolderSource. NamedDynamicDataSource.</PackageReleaseNotes>
+    <PackageReleaseNotes>Namespaces updated. Added: protected Add(...) methods. abstract TestDataToParams(...). TestDataToParms methods shifted to new genderic DynamicDataSource. DynamicDataHolderSource. DynamicNamedDataSource.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <IncludeSymbols>True</IncludeSymbols>
