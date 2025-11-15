@@ -40,10 +40,9 @@ where TDataHolder : class
     public virtual void ResetDataHolder()
     => DataHolder = default;
 
-    protected void Add<TTestData>(
-        bool isTypedDataHolder,
-        IEnumerable<INamedTestCase> namedTestCases,
+    protected void Add<TTestData>(bool isTypedDataHolder,
         TTestData testData,
+        IEnumerable<INamedTestCase> namedTestCases,
         Action<TTestData> add)
     where TTestData : notnull, ITestData
     {

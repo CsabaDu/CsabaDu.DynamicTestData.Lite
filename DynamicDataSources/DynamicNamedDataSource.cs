@@ -6,10 +6,10 @@ namespace CsabaDu.DynamicTestData.Lite.DynamicDataSources;
 public abstract class DynamicNamedDataSource<TRow>(ArgsCode argsCode, PropsCode propsCode)
 : DynamicDataSource<TRow>(argsCode, propsCode)
 {
-    protected override TRow TestDataToParams<TTestData>(TTestData testData)
-    => TestDataToParams(testData, null);
+    protected override TRow Convert<TTestData>(TTestData testData)
+    => Convert(testData, null);
 
-    protected abstract TRow TestDataToParams<TTestData>(TTestData testData, string? testMethodName)
+    protected abstract TRow Convert<TTestData>(TTestData testData, string? testMethodName)
     where TTestData : notnull, ITestData;
 }
 
