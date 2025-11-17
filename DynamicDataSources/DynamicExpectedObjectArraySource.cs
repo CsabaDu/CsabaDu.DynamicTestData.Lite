@@ -13,4 +13,3 @@ namespace CsabaDu.DynamicTestData.Lite.DynamicDataSources;
 /// <param name="argsCode">The <see cref="ArgsCode"/> instance used to configure the dynamic object array source.</param>
 public abstract class DynamicExpectedObjectArraySource(ArgsCode argsCode)
 : DynamicObjectArraySource(argsCode, PropsCode.Expected);
-

@@ -12,4 +12,3 @@ public abstract class DynamicNamedDataSource<TRow>(ArgsCode argsCode, PropsCode 
     protected abstract TRow Convert<TTestData>(TTestData testData, string? testMethodName)
     where TTestData : notnull, ITestData;
 }
-
