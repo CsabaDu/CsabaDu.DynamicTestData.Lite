@@ -43,13 +43,15 @@ where TDataHolder : class
     public virtual void ResetDataHolder()
     => DataHolder = default;
 
-    protected void Add<TTestData, T>(TTestData testData)
+    protected void Add<TTestData>(
+        bool isTypedDataHolder,
+        TTestData testData,
+        Action<TTestData> add)
     where TTestData : notnull, ITestData
-    where T : TDataHolder
     {
-        if (DataHolder is T)
+        if (isTypedDataHolder)
         {
-            Add(testData);
+            add(testData);
         }
         else
         {
@@ -57,38 +59,38 @@ where TDataHolder : class
         }
     }
 
-    /// <summary>
-    /// Adds a collection of test data items to the current collection.
-    /// </summary>
-    /// <remarks>Each item in the <paramref name="testDataCollection"/> is added individually to the current
-    /// collection.</remarks>
-    /// <typeparam name="TTestData">The type of test data items in the collection. Must implement <see cref="ITestData"/> and cannot be null.</typeparam>
-    /// <param name="testDataCollection">The collection of test data items to add. Cannot be null.</param>
-    protected void AddRange<TTestData>(IEnumerable<TTestData> testDataCollection)
-    where TTestData : notnull, ITestData
-    {
-        ArgumentNullException.ThrowIfNull(testDataCollection, nameof(testDataCollection));
-        if (testDataCollection.Any())
-            throw new ArgumentException("Test data collection cannot be empty.", nameof(testDataCollection));
+    ///// <summary>
+    ///// Adds a collection of test data items to the current collection.
+    ///// </summary>
+    ///// <remarks>Each item in the <paramref name="testDataCollection"/> is added individually to the current
+    ///// collection.</remarks>
+    ///// <typeparam name="TTestData">The type of test data items in the collection. Must implement <see cref="ITestData"/> and cannot be null.</typeparam>
+    ///// <param name="testDataCollection">The collection of test data items to add. Cannot be null.</param>
+    //protected void AddRange<TTestData>(IEnumerable<TTestData> testDataCollection)
+    //where TTestData : notnull, ITestData
+    //{
+    //    ArgumentNullException.ThrowIfNull(testDataCollection, nameof(testDataCollection));
+    //    if (testDataCollection.Any())
+    //        throw new ArgumentException("Test data collection cannot be empty.", nameof(testDataCollection));
 
-        foreach (var testData in testDataCollection)
-        {
-            Add(testData);
-        }
-    }
+    //    foreach (var testData in testDataCollection)
+    //    {
+    //        Add(testData);
+    //    }
+    //}
 
-    /// <summary>
-    /// Initializes the data holder with the specified collection of test data.
-    /// </summary>
-    /// <typeparam name="TTestData">The type of test data to initialize the data holder with. Must implement <see cref="ITestData"/> and cannot be
-    /// null.</typeparam>
-    /// <param name="testDataCollection">A collection of test data items to populate the data holder. The collection must not be null, and all items must
-    /// be non-null.</param>
-    protected void InitDataHolder<TTestData>(IEnumerable<TTestData> testDataCollection)
-    where TTestData : notnull, ITestData
-    {
-        AddRange(testDataCollection);
-    }
+    ///// <summary>
+    ///// Initializes the data holder with the specified collection of test data.
+    ///// </summary>
+    ///// <typeparam name="TTestData">The type of test data to initialize the data holder with. Must implement <see cref="ITestData"/> and cannot be
+    ///// null.</typeparam>
+    ///// <param name="testDataCollection">A collection of test data items to populate the data holder. The collection must not be null, and all items must
+    ///// be non-null.</param>
+    //protected void InitDataHolder<TTestData>(IEnumerable<TTestData> testDataCollection)
+    //where TTestData : notnull, ITestData
+    //{
+    //    AddRange(testDataCollection);
+    //}
 
     #region Add methods
     #region Add (Standard test cases)
