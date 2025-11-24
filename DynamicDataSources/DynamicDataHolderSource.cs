@@ -43,6 +43,15 @@ where TDataHolder : class
     public virtual void ResetDataHolder()
     => DataHolder = default;
 
+    /// <summary>
+    /// Adds the specified test data to the appropriate data holder based on the provided flag.
+    /// </summary>
+    /// <remarks>Purpose of this method is to facilitate <see cref="Add<typeparamref name="TTestData"/>>(<typeparamref name="TTestData"/>) implementations in the derived classes.</remarks>
+    /// <typeparam name="TTestData">The type of the test data, which must implement <see cref="ITestData"/> and cannot be null.</typeparam>
+    /// <param name="isTypedDataHolder">A value indicating whether the test data should be added to a typed data holder.  If <see langword="true"/>, the
+    /// <paramref name="add"/> action is invoked; otherwise, the data holder is initialized.</param>
+    /// <param name="testData">The test data to be added. This parameter cannot be null.</param>
+    /// <param name="add">An action that specifies how to add the test data to the typed data holder.</param>
     protected void Add<TTestData>(
         bool isTypedDataHolder,
         TTestData testData,
@@ -72,7 +81,10 @@ where TDataHolder : class
         string definition,
         string expected,
         T1? arg1)
-        => Add(CreateTestData(definition, expected, arg1));
+    => Add(CreateTestData(
+        definition,
+        expected,
+        arg1));
 
     /// <summary>
     /// Adds a standard test case with string expected result and two arguments.
@@ -84,7 +96,10 @@ where TDataHolder : class
         string definition,
         string expected,
         T1? arg1, T2? arg2)
-        => Add(CreateTestData(definition, expected, arg1, arg2));
+    => Add(CreateTestData(
+        definition,
+        expected,
+        arg1, arg2));
 
     protected void Add<T1, T2, T3>(
         string definition,
@@ -163,8 +178,11 @@ where TDataHolder : class
         string definition,
         TStruct expected,
         T1? arg1)
-        where TStruct : struct
-        => Add(CreateTestDataReturns(definition, expected, arg1));
+    where TStruct : struct
+    => Add(CreateTestDataReturns(
+        definition,
+        expected,
+        arg1));
 
     /// <summary>
     /// Adds a test case expecting a value type return with two arguments.
@@ -177,8 +195,11 @@ where TDataHolder : class
         string definition,
         TStruct expected,
         T1? arg1, T2? arg2)
-        where TStruct : struct
-        => Add(CreateTestDataReturns(definition, expected, arg1, arg2));
+    where TStruct : struct
+    => Add(CreateTestDataReturns(
+        definition,
+        expected,
+        arg1, arg2));
 
     protected void AddReturns<TStruct, T1, T2, T3>(
         string definition,
@@ -264,8 +285,11 @@ where TDataHolder : class
         string definition,
         TException expected,
         T1? arg1)
-        where TException : Exception
-        => Add(CreateTestDataThrows(definition, expected, arg1));
+    where TException : Exception
+    => Add(CreateTestDataThrows(
+        definition,
+        expected,
+        arg1));
 
     /// <summary>
     /// Adds a test case expecting an exception with two arguments.
@@ -278,8 +302,11 @@ where TDataHolder : class
         string definition,
         TException expected,
         T1? arg1, T2? arg2)
-        where TException : Exception
-        => Add(CreateTestDataThrows(definition, expected, arg1, arg2));
+    where TException : Exception
+    => Add(CreateTestDataThrows(
+        definition,
+        expected,
+        arg1, arg2));
 
     protected void AddThrows<TException, T1, T2, T3>(
         string definition,
