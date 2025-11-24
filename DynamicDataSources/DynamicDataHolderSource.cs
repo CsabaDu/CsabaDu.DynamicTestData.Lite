@@ -33,7 +33,7 @@ where TDataHolder : class
     /// <summary>
     /// Gets or sets the current data holder instance.
     /// </summary>
-    protected TDataHolder? DataHolder { get; set; }
+        protected TDataHolder? DataHolder { get; set; }
     #endregion
 
     #region Methods
@@ -48,17 +48,17 @@ where TDataHolder : class
     /// </summary>
     /// <remarks>Purpose of this method is to facilitate <see cref="Add<typeparamref name="TTestData"/>>(<typeparamref name="TTestData"/>) implementations in the derived classes.</remarks>
     /// <typeparam name="TTestData">The type of the test data, which must implement <see cref="ITestData"/> and cannot be null.</typeparam>
-    /// <param name="isTypedDataHolder">A value indicating whether the test data should be added to a typed data holder.  If <see langword="true"/>, the
+    /// <param name="isDataHolderTyped">A value indicating whether the test data should be added to a typed data holder.  If <see langword="true"/>, the
     /// <paramref name="add"/> action is invoked; otherwise, the data holder is initialized.</param>
     /// <param name="testData">The test data to be added. This parameter cannot be null.</param>
     /// <param name="add">An action that specifies how to add the test data to the typed data holder.</param>
     protected void Add<TTestData>(
-        bool isTypedDataHolder,
+        bool isDataHolderTyped,
         TTestData testData,
         Action<TTestData> add)
     where TTestData : notnull, ITestData
     {
-        if (isTypedDataHolder)
+        if (isDataHolderTyped)
         {
             add(testData);
         }
@@ -66,6 +66,19 @@ where TDataHolder : class
         {
             InitDataHolder(testData);
         }
+    }
+
+    protected bool IsDataHolderTyped<THolder>(out THolder? typedDataHolder)
+    where THolder : TDataHolder
+    {
+        if (DataHolder is THolder holder)
+        {
+            typedDataHolder = holder;
+            return true;
+        }
+
+        typedDataHolder = default;
+        return false;
     }
 
     #region Add methods
