@@ -69,7 +69,7 @@ where TDataHolder : class
     }
 
     protected bool IsDataHolderTyped<THolder>(out THolder? typedDataHolder)
-    where THolder : TDataHolder
+    where THolder : class
     {
         if (DataHolder is THolder holder)
         {
