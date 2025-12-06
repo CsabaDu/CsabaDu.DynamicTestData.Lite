@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Dynamic Test Data Lite</Title>
-    <Version>2.2.4-beta</Version>
+    <Version>2.2.5-beta</Version>
     <Company>CsabaDu</Company>
     <Description>Light version of CsabaDu.DynamicTestData, a robust, flexible, extensible, pure .NET framework to facilitate dynamic data-driven testing.</Description>
     <Copyright>(c) 2025. Csaba Dudas (CsabaDu)</Copyright>
