@@ -1,6 +1,8 @@
 ﻿// SPDX-License-Identifier: MIT
 // Copyright (c) 2025. Csaba Dudas (CsabaDu)
 
+using CsabaDu.DynamicTestData.Lite.DataStrategyTypes.Interfaces;
+
 namespace CsabaDu.DynamicTestData.Lite.DynamicDataSources;
 
 /// <summary>
