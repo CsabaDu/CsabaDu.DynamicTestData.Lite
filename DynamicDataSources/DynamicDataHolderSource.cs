@@ -33,7 +33,7 @@ where TDataHolder : class
     /// <summary>
     /// Gets or sets the current data holder instance.
     /// </summary>
-        protected TDataHolder? DataHolder { get; set; }
+    protected TDataHolder? DataHolder { get; set; }
     #endregion
 
     #region Methods
