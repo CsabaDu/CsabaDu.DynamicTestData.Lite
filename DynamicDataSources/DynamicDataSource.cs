@@ -169,17 +169,17 @@ public abstract class DynamicDataSource : IDataStrategy
     #region Public methods
     /// <inheritdoc/>
     public bool Equals(IDataStrategy? other)
-        => other is not null
-            && ArgsCode == other.ArgsCode
-            && PropsCode == other.PropsCode;
+    => other is not null
+        && ArgsCode == other.ArgsCode
+        && PropsCode == other.PropsCode;
 
     /// <inheritdoc/>
     public override bool Equals(object? obj)
-        => obj is IDataStrategy other && Equals(other);
+    => Equals(obj as IDataStrategy);
 
     /// <inheritdoc/>
     public override int GetHashCode()
-        => HashCode.Combine(ArgsCode, PropsCode);
+    => HashCode.Combine(ArgsCode, PropsCode);
     #endregion
     #endregion
 }
